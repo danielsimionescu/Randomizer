@@ -1,43 +1,46 @@
 <template>
-  <v-container fluid>
-    <v-slide-y-transition mode="out-in">
-      <v-layout column align-center>
-        <v-container fluid>
-          <list v-for="i in 10" :key="i"></list>
-        </v-container>
-      </v-layout>
-    </v-slide-y-transition>
-  </v-container>
+<v-container>
+  <div class="text-xs-center">
+    <result :result="result"></result>
+    <v-btn color="teal" dark @click="randomize">Randomize</v-btn>
+  </div>
+  <v-layout row>
+    <list v-for="group in groups" :key="group.type" :group="group"></list>
+  </v-layout>
+</v-container>
 </template>
 
 <script>
 import List from './List'
+import Result from './Result'
+
+import data from '../data.js'
 
 export default {
   name: 'Home',
   components: {
-    List
+    List,
+    Result
   },
-  props: {
-    msg: String
+  data () {
+    return {
+      groups: [],
+      result: {}
+    }
+  },
+  created () {
+    this.groups = data;
+  },
+  methods: {
+    randomize() {
+      alert("randomize");
+
+      // get one random from each
+      // add them in an array (4)
+    }
   }
 }
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-h3 {
-  margin: 40px 0 0;
-}
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-li {
-  display: inline-block;
-  margin: 0 10px;
-}
-a {
-  color: #42b983;
-}
 </style>
