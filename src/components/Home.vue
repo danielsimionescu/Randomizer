@@ -14,7 +14,7 @@
 import List from './List'
 
 export default {
-  name: 'HelloWorld',
+  name: 'Home',
   components: {
     List
   },
