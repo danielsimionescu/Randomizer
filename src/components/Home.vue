@@ -2,8 +2,8 @@
   <v-container fluid>
     <v-slide-y-transition mode="out-in">
       <v-layout column align-center>
-        <v-container>
-          <list></list>
+        <v-container fluid>
+          <list v-for="i in 10" :key="i"></list>
         </v-container>
       </v-layout>
     </v-slide-y-transition>

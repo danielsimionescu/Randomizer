@@ -64,33 +64,40 @@
       </v-list>
     </v-navigation-drawer>
     <v-footer :fixed="fixed" app>
-      <span>&copy; 2017</span>
+      <span>&copy; {{currentYear}}</span>
     </v-footer>
   </v-app>
 </template>
 
 <script>
-import Home from './components/Home'
+import Home from "./components/Home";
 
 export default {
-  name: 'App',
+  name: "App",
   components: {
     Home
   },
-  data () {
+  data() {
     return {
       clipped: false,
       drawer: true,
       fixed: false,
-      items: [{
-        icon: 'bubble_chart',
-        title: 'Inspire'
-      }],
+      items: [
+        {
+          icon: "bubble_chart",
+          title: "Inspire"
+        }
+      ],
       miniVariant: false,
       right: true,
       rightDrawer: false,
-      title: 'Randomizer'
+      title: "Randomizer"
+    };
+  },
+  computed: {
+    currentYear() {
+      return (new Date()).getFullYear();
     }
   }
-}
+};
 </script>
