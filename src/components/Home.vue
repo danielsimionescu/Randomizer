@@ -25,7 +25,7 @@ export default {
   data () {
     return {
       groups: [],
-      result: {}
+      result: []
     }
   },
   created () {
@@ -33,10 +33,12 @@ export default {
   },
   methods: {
     randomize() {
-      alert("randomize");
+      this.result = [];
 
-      // get one random from each
-      // add them in an array (4)
+      this.groups.forEach(group => {
+        let rand = group.items[Math.floor(Math.random() * group.items.length)];
+        this.result.push(rand);
+      });
     }
   }
 }

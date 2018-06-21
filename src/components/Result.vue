@@ -2,12 +2,12 @@
   <v-card>
     <v-avatar
       class="logo"
-      v-for="i in 4"
-      :key="i"
+      v-for="item in result"
+      :key="item.name"
       :tile="true"
       size="130"
     >
-      <img src="https://cdn.worldvectorlogo.com/logos/angular-icon-1.svg" alt="avatar">
+      <img :src="item.logo" alt="avatar">
     </v-avatar>
   </v-card>
 </template>
@@ -15,6 +15,7 @@
 <script>
 export default {
   name: 'result',
+  props: ['result']
 }
 </script>
 

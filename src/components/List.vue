@@ -29,7 +29,9 @@ export default {
   props: ['group'],
   computed: {
     sortedList() {
-      return this.group.items.sort((a, b) => {
+      const copy = [...this.group.items];
+
+      return copy.sort((a, b) => {
         var nameA = a.name.toUpperCase(); // ignore upper and lowercase
         var nameB = b.name.toUpperCase(); // ignore upper and lowercase
         if (nameA < nameB) {
@@ -48,9 +50,6 @@ export default {
 </script>
 
 <style scoped>
-  .picked {
-  }
-
   .subheading {
     padding: 10px 0 0 10px;
   }
