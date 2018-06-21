@@ -6,7 +6,9 @@
         <template v-for="(item) in sortedList">
           <v-list-tile :key="item.title" avatar class="picked">
             <v-list-tile-avatar :tile="true">
-              <img :src="item.logo">
+              
+                <img :src="item.logo">
+              
             </v-list-tile-avatar>
             <v-list-tile-content>
               <v-list-tile-title>

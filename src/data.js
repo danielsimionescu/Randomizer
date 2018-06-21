@@ -5,7 +5,8 @@ export default [
       {
         logo: "https://cdn.worldvectorlogo.com/logos/postgresql.svg",
         name: "PostgreSQL",
-        creator: "PostgreSQL Global Dev"
+        creator: "PostgreSQL Global Dev",
+        url: "https://www.postgresql.org/"
       },
       {
         logo: "https://cdn.worldvectorlogo.com/logos/mysql-5.svg",
