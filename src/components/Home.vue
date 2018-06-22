@@ -4,7 +4,7 @@
     <result :result="result"></result>
     <v-btn color="teal" dark @click="randomize">Randomize</v-btn>
   </div>
-  <v-layout row>
+  <v-layout row wrap>
     <list v-for="group in groups" :key="group.type" :group="group"></list>
   </v-layout>
 </v-container>

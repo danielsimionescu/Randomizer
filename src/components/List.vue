@@ -1,20 +1,20 @@
 <template>
-  <v-flex xs6>
+  <v-flex xs12 md6 lg3>
     <v-card style="margin:5px">
       <h2 class="subheading">{{group.type}}</h2>
       <v-list>
         <template v-for="(item) in sortedList">
           <v-list-tile :key="item.title" avatar class="picked">
-            <v-list-tile-avatar :tile="true">
-              
+            <a :href="item.url" target="_blank">
+              <v-list-tile-avatar :tile="true">
                 <img :src="item.logo">
-              
-            </v-list-tile-avatar>
+              </v-list-tile-avatar>
+            </a>
             <v-list-tile-content>
               <v-list-tile-title>
-                {{item.name}}
+                {{item.name}} <span class='text--secondary' v-if="item.language">({{item.language}})</span>
               </v-list-tile-title>
-              <v-list-tile-sub-title class='text--primary'>
+              <v-list-tile-sub-title>
                 {{item.creator}}
               </v-list-tile-sub-title>
             </v-list-tile-content>

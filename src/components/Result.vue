@@ -1,26 +1,21 @@
 <template>
   <v-card>
-    <v-avatar
-      class="logo"
-      v-for="item in result"
-      :key="item.name"
-      :tile="true"
-      size="130"
-    >
-      <img :src="item.logo" alt="avatar">
-    </v-avatar>
+    <item v-for="item in result" :key="item.name" :item="item"></item>
   </v-card>
 </template>
 
 <script>
+import Item from './Item';
+
 export default {
   name: 'result',
-  props: ['result']
+  props: ['result'],
+  components: {
+    Item
+  }
 }
 </script>
 
 <style scoped>
-  .logo {
-    margin: 15px;
-  }
+
 </style>
